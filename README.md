@@ -11,3 +11,36 @@ O objetivo desse projeto é realizar um pequeno e-commerce de artigos esportivos
 - Login de clientes para
   - Visualizar e filtrar produtos
   - Adicionar produtos no carrinho e realizar compras
+
+### Diagrama UML
+```
+@startuml
+class Usuario {
+    -id
+    -nome
+    -email
+    -senha
+}
+
+class Admin {
+    
+}
+
+class Cliente {
+    -cpf
+    -telefone
+}
+
+class Produto {
+    -id
+    -nome
+    -descricao
+    -preco
+    -estoque
+}
+
+class Inventario {
+
+}
+@enduml
+```
