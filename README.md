@@ -27,7 +27,7 @@ abstract class Usuario {
     -nome : String
     -email : Email
     -senha : Senha
-    -criadoEm : DateTime
+    -criadoEm : LocalDateTime
 }
 
 
