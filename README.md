@@ -52,9 +52,9 @@ class Produto {
     -descricao : String
     -preco : double
     -estoque : int
-    -status : bool
+    -status : boolean
     -admin : Admin
-    -criadoEm : DateTime
+    -criadoEm : LocalDateTime
 }
 
 
@@ -64,7 +64,7 @@ class Movimentacao {
     -tipo : TipoMovimentacao
     -quantidade : int
     -produto : Produto
-    -criadoEm : DateTime
+    -criadoEm : LocalDateTime
 }
 
 
@@ -73,9 +73,9 @@ class Carrinho {
     -id : int
     -cliente : Cliente
     -produtos : List<CarrinhoProduto>
-    +adicionarProduto(produto : Produto): bool
+    +adicionarProduto(produto : Produto): boolean
     +listarProdutos(): List<CarrinhoProduto>
-    -criadoEm : DateTime
+    -criadoEm : LocalDateTime
 }
 
 
@@ -84,7 +84,7 @@ class CarrinhoProduto {
     -id : int
     -quantidade : int
     -produto : Produto
-    -criadoEm : DateTime
+    -criadoEm : LocalDateTime
 }
 
 
@@ -97,7 +97,7 @@ class Ordem {
     -cliente : Cliente
     -endereco : Endereco
     -asaasOrdem : String
-    -criadoEm : DateTime
+    -criadoEm : LocalDateTime
 }
 
 
@@ -107,7 +107,7 @@ class OrdemProduto {
     -quantidade : int
     -ordem : Ordem
     -produto : Produto
-    -criadoEm : DateTime
+    -criadoEm : LocalDateTime
 }
 
 
@@ -115,20 +115,20 @@ class OrdemProduto {
 class Endereco {
     -id : int
     -logradouro : String
-    -numero : String?
+    -numero : int?
     -bairro : String
     -cidade : String
     -codigoPostal : String
     -estado : String
     -pais : String
     -cliente : Cliente
-    -criadoEm : DateTime
+    -criadoEm : LocalDateTime
 }
 
 
 
 interface MetodoPagamento {
-    processarPagamento(ordem : Ordem) : bool
+    processarPagamento(ordem : Ordem) : boolean
     descricao() : String
 }
 
