@@ -33,7 +33,7 @@ abstract class Usuario {
 
 
 class Admin {
-    -id : int
+
 }
 
 
@@ -114,13 +114,12 @@ class OrdemProduto {
 
 class Endereco {
     -id : int
+    -cep : String
+    -estado : String
+    -cidade : String
+    -bairro : String
     -logradouro : String
     -numero : int?
-    -bairro : String
-    -cidade : String
-    -codigoPostal : String
-    -estado : String
-    -pais : String
     -cliente : Cliente
     -criadoEm : LocalDateTime
 }
