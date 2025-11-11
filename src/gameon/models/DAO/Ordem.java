@@ -1,5 +1,88 @@
 package gameon.models.DAO;
 
-public class Ordem {
+import java.time.LocalDateTime;
 
+public class Ordem {
+	private int id;
+	private OrdemStatus status;
+	private MetodoPagamento metodoPagamento;
+	private double valorTotal;
+	private Cliente cliente;
+	private Endereco endereco;
+	private String assasOrdem;
+	private LocalDateTime criadoEm;
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public OrdemStatus getStatus() {
+		return status;
+	}
+	public void setStatus(OrdemStatus status) {
+		this.status = status;
+	}
+	public MetodoPagamento getMetodoPagamento() {
+		return metodoPagamento;
+	}
+	public void setMetodoPagamento(MetodoPagamento metodoPagamento) {
+		this.metodoPagamento = metodoPagamento;
+	}
+	public double getValorTotal() {
+		return valorTotal;
+	}
+	public void setValorTotal(double valorTotal) {
+		this.valorTotal = valorTotal;
+	}
+	public Cliente getCliente() {
+		return cliente;
+	}
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
+	public Endereco getEndereco() {
+		return endereco;
+	}
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
+	}
+	public String getAssasOrdem() {
+		return assasOrdem;
+	}
+	public void setAssasOrdem(String assasOrdem) {
+		this.assasOrdem = assasOrdem;
+	}
+	public LocalDateTime getCriadoEm() {
+		return criadoEm;
+	}
+	public void setCriadoEm(LocalDateTime criadoEm) {
+		this.criadoEm = criadoEm;
+	}
+	
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Ordem [id=");
+		builder.append(id);
+		builder.append(", status=");
+		builder.append(status);
+		builder.append(", metodoPagamento=");
+		builder.append(metodoPagamento);
+		builder.append(", valorTotal=");
+		builder.append(valorTotal);
+		builder.append(", cliente=");
+		builder.append(cliente);
+		builder.append(", endereco=");
+		builder.append(endereco);
+		builder.append(", assasOrdem=");
+		builder.append(assasOrdem);
+		builder.append(", criadoEm=");
+		builder.append(criadoEm);
+		builder.append("]");
+		return builder.toString();
+	}
+	
+	
 }
