@@ -1,14 +1,17 @@
-package gameon.models.DAO;
+package gameon.models.DTO;
 
 import java.time.LocalDateTime;
 
-public class Ordem {
+import gameon.models.enums.OrdemStatus;
+import gameon.models.interfaces.MetodoPagamento;
+
+public class OrdemDTO {
 	private int id;
 	private OrdemStatus status;
 	private MetodoPagamento metodoPagamento;
 	private double valorTotal;
-	private Cliente cliente;
-	private Endereco endereco;
+	private ClienteDTO cliente;
+	private EnderecoDTO endereco;
 	private String assasOrdem;
 	private LocalDateTime criadoEm;
 	
@@ -36,16 +39,16 @@ public class Ordem {
 	public void setValorTotal(double valorTotal) {
 		this.valorTotal = valorTotal;
 	}
-	public Cliente getCliente() {
+	public ClienteDTO getCliente() {
 		return cliente;
 	}
-	public void setCliente(Cliente cliente) {
+	public void setCliente(ClienteDTO cliente) {
 		this.cliente = cliente;
 	}
-	public Endereco getEndereco() {
+	public EnderecoDTO getEndereco() {
 		return endereco;
 	}
-	public void setEndereco(Endereco endereco) {
+	public void setEndereco(EnderecoDTO endereco) {
 		this.endereco = endereco;
 	}
 	public String getAssasOrdem() {
@@ -64,7 +67,7 @@ public class Ordem {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Ordem [id=");
+		builder.append("OrdemDTO [id=");
 		builder.append(id);
 		builder.append(", status=");
 		builder.append(status);

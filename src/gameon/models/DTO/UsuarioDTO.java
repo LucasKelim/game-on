@@ -1,8 +1,11 @@
-package gameon.models.DAO;
+package gameon.models.DTO;
 
 import java.time.LocalDateTime;
 
-public class Usuario {
+import gameon.models.valuesobjects.Email;
+import gameon.models.valuesobjects.Senha;
+
+abstract public class UsuarioDTO {
 	private int id;
 	private String nome;
 	private Email email;
@@ -43,7 +46,7 @@ public class Usuario {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Usuario [id=");
+		builder.append("UsuarioDTO [id=");
 		builder.append(id);
 		builder.append(", nome=");
 		builder.append(nome);

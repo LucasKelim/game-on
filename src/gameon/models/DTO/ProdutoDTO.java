@@ -1,15 +1,15 @@
-package gameon.models.DAO;
+package gameon.models.DTO;
 
 import java.time.LocalDateTime;
 
-public class Produto {
+public class ProdutoDTO {
 	private int id;
 	private String nome;
 	private String descricao;
 	private double preco;
 	private int estoque;
 	private boolean status;
-	private Admin admin;
+	private AdminDTO admin;
 	private LocalDateTime criadoEm;
 	
 	public int getId() {
@@ -48,10 +48,10 @@ public class Produto {
 	public void setStatus(boolean status) {
 		this.status = status;
 	}
-	public Admin getAdmin() {
+	public AdminDTO getAdmin() {
 		return admin;
 	}
-	public void setAdmin(Admin admin) {
+	public void setAdmin(AdminDTO admin) {
 		this.admin = admin;
 	}
 	public LocalDateTime getCriadoEm() {
@@ -64,7 +64,7 @@ public class Produto {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Produto [id=");
+		builder.append("ProdutoDTO [id=");
 		builder.append(id);
 		builder.append(", nome=");
 		builder.append(nome);

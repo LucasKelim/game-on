@@ -1,6 +1,6 @@
-package gameon.models.DAO;
+package gameon.models.DTO;
 
-public class Admin extends Usuario{
+public class AdminDTO extends UsuarioDTO {
 	private int id;
 
 	public int getId() {
@@ -14,13 +14,9 @@ public class Admin extends Usuario{
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Admin [id=");
-		builder.append(id);
-		builder.append(", toString()=");
+		builder.append("AdminDTO [");
 		builder.append(super.toString());
 		builder.append("]");
 		return builder.toString();
-	}
-	
-	
+	}	
 }

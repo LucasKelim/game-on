@@ -1,6 +1,6 @@
-package gameon.models.DAO;
+package gameon.models.DTO;
 
-public class Cliente extends Usuario{
+public class ClienteDTO extends UsuarioDTO {
 	private String cpf;
 	private String telefone;
 	private String asaasCliente;
@@ -27,7 +27,7 @@ public class Cliente extends Usuario{
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Cliente [cpf=");
+		builder.append("ClienteDTO [cpf=");
 		builder.append(cpf);
 		builder.append(", telefone=");
 		builder.append(telefone);

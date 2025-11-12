@@ -1,8 +1,8 @@
-package gameon.models.DAO;
+package gameon.models.DTO;
 
 import java.time.LocalDateTime;
 
-public class Endereco {
+public class EnderecoDTO {
 	private int id;
 	private String logradouro;
 	private int numero;
@@ -10,7 +10,7 @@ public class Endereco {
 	private String pais;
 	private String estado;
 	private String cidade;
-	private Cliente cliente;
+	private ClienteDTO cliente;
 	private LocalDateTime criadoEm;
 	
 	public int getId() {
@@ -55,10 +55,10 @@ public class Endereco {
 	public void setCidade(String cidade) {
 		this.cidade = cidade;
 	}
-	public Cliente getCliente() {
+	public ClienteDTO getCliente() {
 		return cliente;
 	}
-	public void setCliente(Cliente cliente) {
+	public void setCliente(ClienteDTO cliente) {
 		this.cliente = cliente;
 	}
 	public LocalDateTime getCriadoEm() {
@@ -71,7 +71,7 @@ public class Endereco {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Endereco [id=");
+		builder.append("EnderecoDTO [id=");
 		builder.append(id);
 		builder.append(", logradouro=");
 		builder.append(logradouro);
