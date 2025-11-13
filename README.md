@@ -113,7 +113,7 @@ create table movimentacao (
 
 ### Diagrama de Classe
 
-```
+```plantuml
 @startuml
 
 abstract class Usuario {
@@ -188,7 +188,6 @@ class Ordem {
     -status : OrdemStatus
     -metodoPagamento : MetodoPagamento
     -valorTotal : double
-    -cliente : Cliente
     -endereco : Endereco
     -asaasOrdem : String
     -criadoEm : LocalDateTime
@@ -252,12 +251,12 @@ Carrinho "0..1" *-- "1" Cliente
 
 Produto <.. Carrinho
 
-CarrinhoProduto "1..*" *-- "1" Carrinho
-CarrinhoProduto "*" *-- "1" Produto
+CarrinhoProduto "*" *-- "1" Carrinho
+CarrinhoProduto "1..*" *-- "1" Produto
 
 Produto "*" o-- "0..1" Admin
 
-OrdemProduto "*" *-- "1" Ordem
+OrdemProduto "1..*" *-- "1" Ordem
 OrdemProduto "*" *-- "1" Produto
 
 Ordem "*" *-- "1" Endereco
