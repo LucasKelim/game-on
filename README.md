@@ -29,7 +29,7 @@ create table usuario (
     nome varchar(255) not null,
     email varchar(255) not null,
     senha varchar(255) not null,
-    criadoEm timestamp default current_timestamp
+    criadoEm timestamp not null default current_timestamp
 );
 
 create table admin (
@@ -44,9 +44,9 @@ create table produto (
     preco double not null,
     estoque int unsigned not null,
     status bool not null,
-    admin int unsigned,
-    criadoEm timestamp default current_timestamp,
-    foreign key (admin) references admin (id)
+    adminId int unsigned,
+    criadoEm timestamp not null default current_timestamp,
+    foreign key (adminId) references admin (id) on delete set null
 );
 
 create table cliente (
@@ -65,47 +65,49 @@ create table endereco (
     cidade varchar(255) not null,
     cep varchar(255) not null,
     estado varchar(255) not null,
-    cliente int unsigned not null,
-    criadoEm timestamp default current_timestamp,
-    foreign key (cliente) references cliente (id)
+    clienteId int unsigned not null,
+    criadoEm timestamp not null default current_timestamp,
+    foreign key (clienteId) references cliente (id)
 );
 
 create table carrinho_produto (
-	produto int unsigned not null,
-    cliente int unsigned not null,
+	produtoId int unsigned not null,
+    clienteId int unsigned not null,
     quantidade int unsigned not null,
-    criadoEm timestamp default current_timestamp,
-    primary key (produto, cliente),
-    foreign key (produto) references produto (id),
-    foreign key (cliente) references cliente (id)
+    criadoEm timestamp not null default current_timestamp,
+    primary key (produtoId, clienteId),
+    foreign key (produtoId) references produto (id),
+    foreign key (clienteId) references cliente (id)
 );
 
 create table ordem (
 	id int unsigned primary key auto_increment,
-    status enum('PENDENTE', 'PAGO', 'ENVIADO', 'ENTREGUE', 'CANCELADO') default 'PENDENTE',
+    status enum('PENDENTE', 'PAGO', 'ENVIADO', 'ENTREGUE', 'CANCELADO') not null default 'PENDENTE',
     metodoPagamento varchar(255) not null,
     valorTotal double not null,
-    endereco int unsigned not null,
-    asaasOrdem varchar(255),
-    criadoEm timestamp default current_timestamp,
-    foreign key (endereco) references endereco (id)
+    enderecoId int unsigned not null,
+    asaasOrdem varchar(255) not null unique,
+    criadoEm timestamp not null default current_timestamp,
+    foreign key (enderecoId) references endereco (id)
 );
 
 create table ordem_produto (
-	ordem int unsigned not null,
-    produto int unsigned not null,
+	ordemId int unsigned not null,
+    produtoId int unsigned not null,
     quantidade int unsigned not null,
-    criadoEm timestamp default current_timestamp,
-    primary key (ordem, produto),
-    foreign key (ordem) references ordem (id),
-    foreign key (produto) references produto (id)
+    criadoEm timestamp not null default current_timestamp,
+    primary key (ordemId, produtoId),
+    foreign key (ordemId) references ordem (id),
+    foreign key (produtoId) references produto (id)
 );
 
 create table movimentacao (
 	id int unsigned primary key auto_increment,
-    tipo enum('SAIDA', 'ENTRADA', 'AJUSTE') default 'SAIDA',
+    tipo enum('SAIDA', 'ENTRADA', 'AJUSTE') not null default 'SAIDA',
     quantidade int unsigned not null,
-    criadoEm timestamp default current_timestamp
+    produtoId int unsigned not null,
+    criadoEm timestamp not null default current_timestamp,
+    foreign key (produtoId) references produto (id)
 );
 ```
 
