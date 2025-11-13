@@ -115,7 +115,6 @@ create table movimentacao (
 
 ```plantuml
 @startuml
-
 abstract class Usuario {
     -id : int
     -nome : String
@@ -124,21 +123,15 @@ abstract class Usuario {
     -criadoEm : LocalDateTime
 }
 
-
-
 class Admin {
 
 }
-
-
 
 class Cliente {
     -cpf : String
     -telefone : String
     -asaasCliente : String
 }
-
-
 
 class Produto {
     -id : int
@@ -151,8 +144,6 @@ class Produto {
     -criadoEm : LocalDateTime
 }
 
-
-
 class Movimentacao {
     -id : int
     -tipo : TipoMovimentacao
@@ -160,8 +151,6 @@ class Movimentacao {
     -produto : Produto
     -criadoEm : LocalDateTime
 }
-
-
 
 class Carrinho {
     -id : int
@@ -172,16 +161,12 @@ class Carrinho {
     -criadoEm : LocalDateTime
 }
 
-
-
 class CarrinhoProduto {
     -id : int
     -quantidade : int
     -produto : Produto
     -criadoEm : LocalDateTime
 }
-
-
 
 class Ordem {
     -id : int
@@ -193,8 +178,6 @@ class Ordem {
     -criadoEm : LocalDateTime
 }
 
-
-
 class OrdemProduto {
     -id : int
     -quantidade : int
@@ -202,8 +185,6 @@ class OrdemProduto {
     -produto : Produto
     -criadoEm : LocalDateTime
 }
-
-
 
 class Endereco {
     -id : int
@@ -217,14 +198,10 @@ class Endereco {
     -criadoEm : LocalDateTime
 }
 
-
-
 interface MetodoPagamento {
     processarPagamento(ordem : Ordem) : boolean
     descricao() : String
 }
-
-
 
 enum TipoMovimentacao {
     ENTRADA
@@ -232,15 +209,13 @@ enum TipoMovimentacao {
     AJUSTE
 }
 
-
-
 enum OrdemStatus {
     PENDENTE
     PAGO
+	ENVIADO
+	ENTREGUE
     CANCELADO
 }
-
-
 
 Usuario <|-- Cliente
 Usuario <|-- Admin
