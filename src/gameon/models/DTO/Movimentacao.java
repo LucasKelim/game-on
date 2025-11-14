@@ -4,11 +4,11 @@ import java.time.LocalDateTime;
 
 import gameon.models.enums.TipoMovimentacao;
 
-public class MovimentacaoDTO {
+public class Movimentacao {
 	private int id;
 	private TipoMovimentacao movimentacao;
 	private int quantidade;
-	private ProdutoDTO produto;
+	private Produto produto;
 	private LocalDateTime CriadoEm;
 	
 	public int getId() {
@@ -35,11 +35,11 @@ public class MovimentacaoDTO {
 		this.quantidade = quantidade;
 	}
 	
-	public ProdutoDTO getProduto() {
+	public Produto getProduto() {
 		return produto;
 	}
 	
-	public void setProduto(ProdutoDTO produto) {
+	public void setProduto(Produto produto) {
 		this.produto = produto;
 	}
 	

@@ -1,6 +1,6 @@
 package gameon.models.DTO;
 
-public class ClienteDTO extends UsuarioDTO {
+public class Cliente extends Usuario {
 	private String cpf;
 	private String telefone;
 	private String asaasCliente;

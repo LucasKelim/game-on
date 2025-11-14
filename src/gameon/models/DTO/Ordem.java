@@ -5,13 +5,13 @@ import java.time.LocalDateTime;
 import gameon.models.enums.OrdemStatus;
 import gameon.models.interfaces.MetodoPagamento;
 
-public class OrdemDTO {
+public class Ordem {
 	private int id;
 	private OrdemStatus status;
 	private MetodoPagamento metodoPagamento;
 	private double valorTotal;
-	private ClienteDTO cliente;
-	private EnderecoDTO endereco;
+	private Cliente cliente;
+	private Endereco endereco;
 	private String assasOrdem;
 	private LocalDateTime criadoEm;
 	
@@ -39,16 +39,16 @@ public class OrdemDTO {
 	public void setValorTotal(double valorTotal) {
 		this.valorTotal = valorTotal;
 	}
-	public ClienteDTO getCliente() {
+	public Cliente getCliente() {
 		return cliente;
 	}
-	public void setCliente(ClienteDTO cliente) {
+	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
 	}
-	public EnderecoDTO getEndereco() {
+	public Endereco getEndereco() {
 		return endereco;
 	}
-	public void setEndereco(EnderecoDTO endereco) {
+	public void setEndereco(Endereco endereco) {
 		this.endereco = endereco;
 	}
 	public String getAssasOrdem() {

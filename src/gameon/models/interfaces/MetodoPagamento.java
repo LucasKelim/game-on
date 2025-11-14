@@ -1,8 +1,8 @@
 package gameon.models.interfaces;
 
-import gameon.models.DTO.OrdemDTO;
+import gameon.models.DTO.Ordem;
 
 public interface MetodoPagamento {
-	public boolean processarPagamento(OrdemDTO ordem);
+	public boolean processarPagamento(Ordem ordem);
 	public String descricao();
 }

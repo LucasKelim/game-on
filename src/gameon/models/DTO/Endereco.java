@@ -2,7 +2,7 @@ package gameon.models.DTO;
 
 import java.time.LocalDateTime;
 
-public class EnderecoDTO {
+public class Endereco {
 	private int id;
 	private String logradouro;
 	private int numero;
@@ -10,7 +10,7 @@ public class EnderecoDTO {
 	private String pais;
 	private String estado;
 	private String cidade;
-	private ClienteDTO cliente;
+	private Cliente cliente;
 	private LocalDateTime criadoEm;
 	
 	public int getId() {
@@ -55,10 +55,10 @@ public class EnderecoDTO {
 	public void setCidade(String cidade) {
 		this.cidade = cidade;
 	}
-	public ClienteDTO getCliente() {
+	public Cliente getCliente() {
 		return cliente;
 	}
-	public void setCliente(ClienteDTO cliente) {
+	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
 	}
 	public LocalDateTime getCriadoEm() {

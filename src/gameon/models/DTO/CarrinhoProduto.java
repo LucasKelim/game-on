@@ -1,5 +1,5 @@
 package gameon.models.DTO;
 
-public class TesteDTO {
+public class CarrinhoProduto {
 
 }

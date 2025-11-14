@@ -1,4 +1,4 @@
-package gameon.models.DAO;
+package gameon.models.DTO;
 
 public class Carrinho {
 	private int id;
