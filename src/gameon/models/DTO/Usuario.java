@@ -24,14 +24,14 @@ abstract public class Usuario {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public Email getEmail() {
-		return email;
+	public String getEmail() {
+		return email.getEmail();
 	}
 	public void setEmail(Email email) {
 		this.email = email;
 	}
-	public Senha getSenha() {
-		return senha;
+	public String getSenha() {
+		return senha.getSenha();
 	}
 	public void setSenha(Senha senha) {
 		this.senha = senha;

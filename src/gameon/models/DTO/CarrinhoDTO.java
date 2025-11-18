@@ -5,7 +5,7 @@ import java.util.List;
 
 public class CarrinhoDTO {
 	private int id;
-	private ClienteDTO cliente;
+	private Cliente cliente;
 	private List<CarrinhoProdutoDTO> produtos;
 	private LocalDateTime criadoEm;
 	
@@ -15,10 +15,10 @@ public class CarrinhoDTO {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public ClienteDTO getCliente() {
+	public Cliente getCliente() {
 		return cliente;
 	}
-	public void setCliente(ClienteDTO cliente) {
+	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
 	}
 	public List<CarrinhoProdutoDTO> getProdutos() {
