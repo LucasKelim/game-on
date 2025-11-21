@@ -1,5 +1,52 @@
 package gameon.models.DTO;
 
-public class CarrinhoProduto {
+import java.time.LocalDateTime;
 
+public class CarrinhoProduto {
+	private int id;
+	private int quantidade;
+	private Produto produto;
+	private LocalDateTime criadoEm;
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public int getQuantidade() {
+		return quantidade;
+	}
+	public void setQuantidade(int quantidade) {
+		this.quantidade = quantidade;
+	}
+	public Produto getProduto() {
+		return produto;
+	}
+	public void setProduto(Produto produto) {
+		this.produto = produto;
+	}
+	public LocalDateTime getCriadoEm() {
+		return criadoEm;
+	}
+	public void setCriadoEm(LocalDateTime criadoEm) {
+		this.criadoEm = criadoEm;
+	}
+	
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("CarrinhoProdutoDTO [id=");
+		builder.append(id);
+		builder.append(", quantidade=");
+		builder.append(quantidade);
+		builder.append(", produto=");
+		builder.append(produto);
+		builder.append(", criadoEm=");
+		builder.append(criadoEm);
+		builder.append("]");
+		return builder.toString();
+	}
+	
+	
 }

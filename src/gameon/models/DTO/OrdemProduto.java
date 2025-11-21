@@ -2,11 +2,11 @@ package gameon.models.DTO;
 
 import java.time.LocalDateTime;
 
-public class OrdemProdutoDTO {
+public class OrdemProduto {
 	private int id;
 	private int quantidade;
-	private OrdemDTO ordem;
-	private ProdutoDTO produto;
+	private Ordem ordem;
+	private Produto produto;
 	private LocalDateTime criadoEm;
 	
 	public int getId() {
@@ -21,16 +21,16 @@ public class OrdemProdutoDTO {
 	public void setQuantidade(int quantidade) {
 		this.quantidade = quantidade;
 	}
-	public OrdemDTO getOrdem() {
+	public Ordem getOrdem() {
 		return ordem;
 	}
-	public void setOrdem(OrdemDTO ordem) {
+	public void setOrdem(Ordem ordem) {
 		this.ordem = ordem;
 	}
-	public ProdutoDTO getProduto() {
+	public Produto getProduto() {
 		return produto;
 	}
-	public void setProduto(ProdutoDTO produto) {
+	public void setProduto(Produto produto) {
 		this.produto = produto;
 	}
 	public LocalDateTime getCriadoEm() {
